@@ -15,7 +15,7 @@ export default function Home() {
   const fetchWeather = async () => {
     try {
       setLoading(true); 
-      const res = await fetch(`http://localhost:5000/api/weather?city=${city}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_KEY}/api/weather?city=${city}`);
       const data = await res.json();
 
       if (res.ok) {
